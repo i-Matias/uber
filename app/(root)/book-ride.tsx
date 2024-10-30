@@ -14,7 +14,7 @@ const BookRide = () => {
   const { drivers, selectedDriver } = useDriverStore();
 
   const driverDetails = drivers?.filter(
-    (driver) => +driver.id === selectedDriver,
+    (driver) => +driver.id === selectedDriver
   )[0];
 
   return (
@@ -64,7 +64,9 @@ const BookRide = () => {
             <View className="flex flex-row items-center justify-between w-full border-b border-white py-3">
               <Text className="text-lg font-JakartaRegular">Pickup Time</Text>
               <Text className="text-lg font-JakartaRegular">
-                {formatTime(driverDetails?.time!)}
+                {driverDetails &&
+                  driverDetails.time &&
+                  formatTime(driverDetails.time)}
               </Text>
             </View>
 

@@ -54,7 +54,7 @@ const Payment = ({
         confirmHandler: async (
           paymentMethod,
           shouldSavePaymentMethod,
-          intentCreationCallback,
+          intentCreationCallback
         ) => {
           const { paymentIntent, customer } = await fetchAPI(
             "/(api)/(stripe)/create",
@@ -69,7 +69,7 @@ const Payment = ({
                 amount: amount,
                 paymentMethodId: paymentMethod.id,
               }),
-            },
+            }
           );
 
           if (paymentIntent.client_secret) {
@@ -77,6 +77,7 @@ const Payment = ({
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
+                Authorization: `Bearer ${process.env.EXPO_STRIPE_SECRET_KEY}`,
               },
               body: JSON.stringify({
                 payment_method_id: paymentMethod.id,

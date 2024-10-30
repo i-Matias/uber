@@ -30,6 +30,7 @@ const Profile = () => {
             <InputField
               label="First name"
               placeholder={user?.firstName || "Not Found"}
+              placeholderTextColor={"#000"}
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}
@@ -38,6 +39,7 @@ const Profile = () => {
             <InputField
               label="Last name"
               placeholder={user?.lastName || "Not Found"}
+              placeholderTextColor={"#000"}
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}
@@ -48,6 +50,7 @@ const Profile = () => {
               placeholder={
                 user?.primaryEmailAddress?.emailAddress || "Not Found"
               }
+              placeholderTextColor={"#000"}
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}
@@ -56,6 +59,7 @@ const Profile = () => {
             <InputField
               label="Phone"
               placeholder={user?.primaryPhoneNumber?.phoneNumber || "Not Found"}
+              placeholderTextColor={"#000"}
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}

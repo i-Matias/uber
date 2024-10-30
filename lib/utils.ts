@@ -14,11 +14,11 @@ export function formatTime(minutes: number): string {
   const formattedMinutes = +minutes?.toFixed(0) || 0;
 
   if (formattedMinutes < 60) {
-    return `${minutes} min`;
+    return `${minutes.toFixed(2)} min`;
   } else {
     const hours = Math.floor(formattedMinutes / 60);
     const remainingMinutes = formattedMinutes % 60;
-    return `${hours}h ${remainingMinutes}m`;
+    return `${hours}h ${remainingMinutes.toFixed(2)}m`;
   }
 }
 
